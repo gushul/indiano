@@ -1,0 +1,4 @@
+RECIPES
+["admin", "devise", "email", "frontend", "gems", "locale", "omniauth", "pages", "roles", "setup"]
+PREFERENCES
+{:dev_webserver=>"webrick", :prod_webserver=>"unicorn", :database=>"postgresql", :templates=>"haml", :frontend=>"bootstrap3", :email=>"mandrill", :authentication=>"devise", :devise_modules=>"confirmable", :authorization=>"roles", :form_builder=>"simple_form", :pages=>"about"}
