@@ -22,6 +22,7 @@ gem 'pg'
 gem 'rails_admin'
 gem 'simple_form'
 
+
 group :development do
   gem 'html2haml'
   gem 'rails_layout'
@@ -30,4 +31,7 @@ end
 group :production do
   gem 'unicorn'
 end
-
+#My
+gem 'carrierwave'
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'rails_admin', '~> 0.6.3'
