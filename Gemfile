@@ -19,7 +19,6 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
-gem 'rails_admin'
 gem 'simple_form'
 
 
@@ -34,4 +33,4 @@ end
 #My
 gem 'carrierwave'
 gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
-gem 'rails_admin', '~> 0.6.3'
+gem 'activeadmin', github: 'activeadmin'
