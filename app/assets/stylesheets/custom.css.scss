@@ -1,0 +1,45 @@
+.navbar-brand {
+  padding: 10px 10px !important;
+}
+.navbar {
+  background-color: black !important;
+  min-height: 98 !important;
+}
+
+.menu {
+	position: absolute;
+	left: 276px;
+	top: 30px;
+
+	li {
+		padding: 0px 35px 0px 0px;
+		float: left;
+
+		a {
+			text-transform: uppercase;
+			font-family: "PFAdamantProRegular";
+		}
+	}
+}
+.navbar-right  {
+	top: 30px !important;
+
+	li {
+		padding: 30px 35px 0px 0px;
+
+		a {
+			text-transform: uppercase;
+			font-family: "PFAdamantProRegular";
+			color: #2EB4D4 !important;
+
+			a:hover,
+			a:focus{
+				color: #2EB4D4 !important;
+  			background-color: transparent;
+  			text-decoration: none !important;
+
+			}
+
+		}
+	}
+}
