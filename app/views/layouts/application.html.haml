@@ -11,6 +11,9 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
+
       = render 'layouts/messages'
-      .container
+      .topline
+      .container.content
+        .topline
         = yield
