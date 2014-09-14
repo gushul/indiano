@@ -16,4 +16,7 @@
 /tmp
 
 # Ignore database config
-config/database.yml
+/config/database.yml
+/config/deploy/
+/shared/
+/public/system/
