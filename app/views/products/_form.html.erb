@@ -1,0 +1,28 @@
+<%= form_for(@product, multipart: true) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+   <%= f.fields_for :pictures do |p| %>
+     <div class="field">
+       <%= p.label :image %><br>
+       <%= p.file_field :image, :multiple => true, name: "picture[image][]" %>
+     </div>
+   <% end %>
+ 
+  <div class="actions">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>

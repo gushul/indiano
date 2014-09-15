@@ -1,0 +1,15 @@
+%p#notice= notice
+
+
+- @pictures.each do |p|
+  = image_tag p.image_url
+%p
+  %b Title:
+  = @product.title
+%p
+  %b Description:
+  = @product.description
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

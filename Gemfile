@@ -19,8 +19,8 @@ gem 'devise-i18n'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
-gem 'rails_admin'
 gem 'simple_form'
+
 
 group :development do
   gem 'html2haml'
@@ -30,4 +30,7 @@ end
 group :production do
   gem 'unicorn'
 end
-
+#My
+gem 'carrierwave'
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'activeadmin', github: 'activeadmin'
