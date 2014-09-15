@@ -1,0 +1,78 @@
+.navbar-brand {
+  padding: 10px 10px !important;
+}
+.navbar {
+  background-color: black !important;
+  min-height: 98 !important;
+}
+
+.menu {
+  position: absolute;
+  left: 276px;
+  top: 30px;
+
+  li {
+    padding: 0px 35px 0px 0px;
+    float: left;
+
+    a {
+      text-transform: uppercase;
+      font-family: "PFAdamantProRegular";
+    }
+  }
+}
+.navbar-right  {
+  top: 30px !important;
+
+  li {
+    padding: 30px 35px 0px 0px;
+
+    a {
+      text-transform: uppercase;
+      font-family: "PFAdamantProRegular";
+      color: #2EB4D4 !important;
+
+      a:hover,
+      a:focus{
+        color: #2EB4D4 !important;
+        background-color: transparent;
+        text-decoration: none !important;
+      }
+    }
+  }
+}
+.topline{
+  height: 8px;
+  width: 100%;
+  border-bottom:2px solid #000000;
+  top: 0px;
+  left: 0px;
+}
+.foto {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 217px;
+  padding: 9px 0px 9px 0px;
+}
+.content {
+  padding: 50px 70px 50px 70px;
+  .row {
+    padding: 60px 70px 0px 70px;
+  }
+}
+.medit {
+  font-family: "PFAdamantProMediumItalic" !important;
+  color: #333 !important;
+  display: block;
+  font-size: 16px;
+  margin: 0px 0px 10px 0px;
+  text-decoration: none !important;
+}
+.footer {
+  background:#000000;
+  padding:8px 0; 
+  color:#fff;
+  margin-bottom:0
+}
+  
+
