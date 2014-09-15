@@ -11,5 +11,11 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
+
       = render 'layouts/messages'
-      = yield
+      .topline
+      .container.content
+        - unless @page_home
+          .topline
+        = yield
+    = render 'layouts/footer'
