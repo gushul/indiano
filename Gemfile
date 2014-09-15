@@ -29,9 +29,14 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 #My
 gem 'carrierwave'
 gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 gem 'activeadmin', github: 'activeadmin'
 gem 'foreman'
+gem 'figaro'
