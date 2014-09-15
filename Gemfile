@@ -33,6 +33,7 @@ group :production do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
+  gem 'rails_12factor'
 end
 #My
 gem 'carrierwave'
