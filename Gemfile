@@ -37,7 +37,7 @@ group :production do
 end
 #My
 gem 'carrierwave'
-gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'rmagick', '2.13.2', require: 'RMagick'
 gem 'activeadmin', github: 'activeadmin'
 gem 'foreman'
 gem 'figaro'
