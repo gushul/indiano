@@ -1,193 +1,71 @@
-set :repo_url, 'bitbucket.org/ueiek/indiano'
+require "bundler/capistrano"
+require "rvm/capistrano"
+require 'capistrano/setup'
+require 'capistrano/deploy'
+require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails'
+
+# Includes default deployment tasks
+require 'capistrano/deploy'
+
+
+
+set :repo_url, 'git@bitbucket.org:ueiek/indiano.git'
 set :application, 'indiano'
 application = 'indiano'
+
+
+
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.2p95'
-set :deploy_to, '/var/www/apps/indiano'
-
-namespace :foreman do
-  desc 'Start server'
-  task :start do
-    on roles(:all) do
-      sudo "start #{application}"
-    end
-  end
-
-  desc 'Stop server'
-  task :stop do
-    on roles(:all) do
-      sudo "stop #{application}"
-    end
-  end
-
-  desc 'Restart server'
-  task :restart do
-    on roles(:all) do
-      sudo "restart #{application}"
-    end
-  end
-
-  desc 'Server status'
-  task :status do
-    on roles(:all) do
-      execute "initctl list | grep #{application}"
-    end
-  end
-end
-
-namespace :git do
-  desc 'Deploy'
-  task :deploy do
-    ask(:message, "Commit message?")
-    run_locally do
-      execute "git add -A"
-      execute "git commit -m '#{fetch(:message)}'"
-      execute "git push"
-    end
-  end
-
-    desc 'Setup'
-  task :setup do
-    on roles(:all) do
-      execute "mkdir  #{shared_path}/config/"
-      execute "mkdir  /var/www/apps/#{application}/run/"
-      execute "mkdir  /var/www/apps/#{application}/log/"
-      execute "mkdir  /var/www/apps/#{application}/socket/"
-      execute "mkdir #{shared_path}/system"
-      sudo "ln -s /var/log/upstart /var/www/log/upstart"
-
-      upload!('shared/database.yml', "#{shared_path}/config/database.yml")
-      
-      upload!('shared/Procfile', "#{shared_path}/Procfile")
-
-
-      upload!('shared/nginx.conf', "#{shared_path}/nginx.conf")
-      sudo 'stop nginx'
-      sudo "rm -f /usr/local/nginx/conf/nginx.conf"
-      sudo "ln -s #{shared_path}/nginx.conf /usr/local/nginx/conf/nginx.conf"
-      sudo 'start nginx'
-
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, "db:create"
-        end
-      end
+set :deploy_to, '/home/rails/'
 
 
 
-    end
-  end
-
-  desc 'Create symlink'
-  task :symlink do
-    on roles(:all) do
-      execute "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
-      execute "ln -s #{shared_path}/system #{release_path}/public/system"
-    end
-  end
-
-  desc 'Foreman init'
-  task :foreman_init do
-    on roles(:all) do
-      foreman_temp = "/var/www/tmp/foreman"
-      execute  "mkdir -p #{foreman_temp}"
-      # Создаем папку current для того, чтобы foreman создавал upstart файлы с правильными путями
-      execute "ln -s #{release_path} #{current_path}"
-
-      within current_path do
-        execute "cd #{current_path}"
-        execute :bundle, "exec foreman export upstart #{foreman_temp} -a #{application} -u deployer -l /var/www/apps/#{application}/log -d #{current_path}"
-      end
-      sudo "mv #{foreman_temp}/* /etc/init/"
-      sudo "rm -r #{foreman_temp}"
-    end
-  end
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      sudo "restart #{application}"
-    end
-  end
-
-  after :finishing, 'deploy:cleanup'
-  after :finishing, 'deploy:restart'
-
-  after :updating, 'deploy:symlink'
-
-  after :setup, 'deploy:foreman_init'
-
-  after :foreman_init, 'foreman:start'
-
-  before :foreman_init, 'rvm:hook'
-
-  before :setup, 'deploy:starting'
-  before :setup, 'deploy:updating'
-  before :setup, 'bundler:install'
-end
+set :scm, "git"
+set :repository, "git@github.com:username/#{application}.git"
+set :branch, "master"
 
 
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
-
-
-
-# config valid only for Capistrano 3.1
-lock '3.2.1'
-
-set :application, 'indiano'
-set :repo_url, 'git@example.com:me/my_repo.git'
-
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-
-# Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
-
-# Default value for :scm is :git
-# set :scm, :git
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
-
-# Default value for :pty is false
-# set :pty, true
-
-# Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
-
-# Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command, roles: :app, except: {no_release: true} do
+      run "/etc/init.d/unicorn_#{application} #{command}"
     end
   end
 
-  after :publishing, :restart
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/config"
+    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    puts "Now edit the config files in #{shared_path}."
+  end
+  after "deploy:setup", "deploy:setup_config"
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+  after "deploy:finalize_update", "deploy:symlink_config"
+
+  desc "Make sure local git is in sync with remote."
+  task :check_revision, roles: :web do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes."
+      exit
     end
   end
-
+  before "deploy", "deploy:check_revision"
 end
