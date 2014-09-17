@@ -33,6 +33,7 @@ group :production do
 end
 #My
 gem 'carrierwave'
+gem 'carrierwave-dropbox'
 gem 'rmagick', '2.13.2', require: 'RMagick'
 gem 'activeadmin', github: 'activeadmin'
 gem 'figaro'
