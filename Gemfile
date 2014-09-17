@@ -36,4 +36,5 @@ gem 'carrierwave'
 gem 'carrierwave-dropbox'
 gem 'rmagick', '2.13.2', require: 'RMagick'
 gem 'activeadmin', github: 'activeadmin'
+gem "active_admin_multi_upload"
 gem 'figaro'
