@@ -38,3 +38,4 @@ gem 'rmagick', '2.13.2', require: 'RMagick'
 gem 'activeadmin', github: 'activeadmin'
 gem "active_admin_multi_upload"
 gem 'figaro', '~>1.0.0'
+gem 'foreman', '~> 0.75.0'
