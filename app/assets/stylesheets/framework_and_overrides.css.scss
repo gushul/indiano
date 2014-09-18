@@ -31,7 +31,6 @@ img {
 main {
   @extend .container;
   background-color: none;
-  background: url(<%= asset_data_uri 'bg.jpg' %>);
   padding-bottom: 80px;
   width: 100%;
   margin-top: 100px; // accommodate the navbar
