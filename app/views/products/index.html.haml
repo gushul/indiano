@@ -7,3 +7,6 @@
             = image_tag product.pictures.first.image_url(:thumb)
         .caption
           %h3= product.title
+.row
+  .col-md-6.col-md-offset-3
+    = will_paginate @products, renderer: BootstrapPagination::Rails

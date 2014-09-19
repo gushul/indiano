@@ -39,3 +39,4 @@ gem 'activeadmin', github: 'activeadmin'
 gem "active_admin_multi_upload"
 gem 'figaro', '~>1.0.0'
 gem 'foreman', '~> 0.75.0'
+gem 'will_paginate-bootstrap'
