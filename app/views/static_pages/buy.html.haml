@@ -1,3 +1,109 @@
+- @no_line = "home"
 .row
   %p 
-    для начала сотрудничества — пришлите нам на почту  письмо в котором укажите Ваши данные, регион. форму оплаты которая Вас устраивает, Т.К.  и данные грузополучателя. 
+    %h1.justify.buy  
+      Оптовикам
+    %h2.justify
+      Мы приглашаем к сотрудничеству интернет-магазины и бутики
+      модной одежды из разных регионов России.
+  #leftMenu.accordion
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseOne"}
+          %i.icon-home
+            %span &nbsp;+&nbsp;
+            %span.onashead.p
+              Наши принципы работы
+      #collapseOne.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %ul
+            %li Мы несем ответственность за качество производимой продукции.
+            %li Мы уважаем партнеров, выполняем все договорные обязательства и заинтересованы во взаимовыгодном и долгосрочном сотрудничестве.
+            %li Мы уважаем потребителей и предоставляем только достоверную информацию о товаре и материалах
+            %li Мы заинтересованы в совершенствовании и развитии нашей компании и наших партнеров.
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseTwo"}
+          %i.icon-th
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Условия сотрудничеств
+      #collapseTwo.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p
+            Мы работаем с юридическими лицами и индивидуальными предпринимателями на всей территории России. Вам необходимо подтвердить вид деятельности. Предоставьте пожалуйста:
+          %ul
+            %li ИНН
+            %li Копию свидетельства о регистрации (ОГРН или ОГРНИП)
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseThree"}
+          %i.icon-th-list
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Правила заказа
+      #collapseThree.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p 
+            Минимальная сумма закупки — 15000 рублей
+          %p 
+            Вы можете выбрать любой артикул в любых размерах и количествах (при условии наличия на складе).
+          %p  
+            Мы подтверждаем и формируем заказ в течение рабочего дня   после получения заявки и
+            выставляем счет на оплату. Бронь действительная в течение 3 рабочих дней с момента
+            выставления счета. Отгрузка осуществляется только после 100% оплаты. В ином случае заказ
+            будет отменен
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseFour"}
+          %i.icon-list-alt
+            %span &nbsp;+&nbsp;
+            %span.onashead.p
+              Схема заказа
+      #collapseFour.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p 
+          Когда заказ сформирован, его можно отправить нашим менеджерам для подтверждения и
+          выставления счета на оплату.  В течение суток наш менеджер
+          свяжется с вами.
+          Если вы пока не готовы оформить заказ, можете сохранить его и оправить только на свой е-mail.
+          Для этого на странице корзины кликните "сохранить".
+        
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseFive"}
+          %i.icon-cog
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Доставка
+      #collapseFive.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p
+            Мы осуществляем бесплатную доставку по Санкт-Петербургу. Иногородним
+            организациям мы доставляем товар до любой транспортной компании или
+            почтовой службы, услуги по доставке в свой город оплачивает покупатель.
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseSix"}
+          %i.icon-file
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Обмен и возврат
+      #collapseSix.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %ul
+            %li This is one
+            %li This is two
+            %li This is Three
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseSeven"}
+          %i.icon-file
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Юридическая информация
+      #collapseSeven.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %ul
+            %li This is one
+            %li This is two

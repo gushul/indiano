@@ -15,7 +15,7 @@
       = render 'layouts/messages'
       .topline
       .container.content
-        - unless @page_home
+        - unless @no_line
           .topline
         = yield
     = render 'layouts/footer'
