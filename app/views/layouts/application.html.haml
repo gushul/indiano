@@ -2,7 +2,8 @@
 %html
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Indiano'
+    %title= content_for?(:title) ? yield(:title) : 'Indiano Moscow'
+    %meta{:content => "584abef4a5c17249", :name => "yandex-verification"}/
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Indiano'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
