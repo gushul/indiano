@@ -1,41 +1,23 @@
-require "bundler/capistrano"
 require "rvm/capistrano"
-require 'capistrano/setup'
-require 'capistrano/deploy'
-require 'capistrano/rvm'
-require 'capistrano/bundler'
-require 'capistrano/rails'
+require "bundler/capistrano"
 
-# Includes default deployment tasks
-require 'capistrano/deploy'
-
-
-
-set :repo_url, 'git@bitbucket.org:ueiek/indiano.git'
-set :application, 'indiano'
-application = 'indiano'
-
-
-
-set :rvm_type, :user
-set :rvm_ruby_version, '2.1.2p95'
-set :deploy_to, '/home/rails/'
-
-
-
-set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-
-set :scm, "git"
-set :repository, "git@github.com:username/#{application}.git"
+set :application, "testapp"
+set :shared_children, shared_children
+set :repository,  "git@github.com:istickz/testapp.git"
+set :deploy_to, "/var/www/testapp"
+set :scm, :git
 set :branch, "master"
-
-
+set :user, "username"
+set :group, "username"
+set :use_sudo, false
+set :rails_env, "production"
+set :deploy_via, :copy
+set :ssh_options, { :forward_agent => true, :port => 6629 }
+set :keep_releases, 5
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+server "XX.XX.XX.XX", :app, :web, :db, :primary => true
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases
+after "deploy", "deploy:cleanup"
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -49,8 +31,8 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
-    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
-    puts "Now edit the config files in #{shared_path}."
+    put File.read("config/production_database.yml"), "#{shared_path}/config/database.yml"
+    puts "Теперь вы можете отредактировать файлы в  #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
 
@@ -68,4 +50,5 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+
 end
