@@ -25,15 +25,15 @@ gem 'simple_form'
 group :development do
   gem 'html2haml'
   gem 'rails_layout'
+  gem 'rvm-capistrano'
+  gem 'capistrano'
 end
 
 group :production do
   gem 'unicorn'
-  gem 'rails_12factor'
 end
 #My
 gem 'carrierwave'
-gem 'carrierwave-dropbox'
 gem 'rmagick', '2.13.2', require: 'RMagick'
 gem 'activeadmin', github: 'activeadmin'
 gem "active_admin_multi_upload"
