@@ -3,8 +3,8 @@ require "bundler/capistrano"
 
 set :application, "testapp"
 set :shared_children, shared_children
-set :repository,  "git@github.com:istickz/testapp.git"
-set :deploy_to, "/var/www/testapp"
+set :repository,  "git@github.com:gushul/indiano.git"
+set :deploy_to, "/var/www/indiano"
 set :scm, :git
 set :branch, "master"
 set :user, "username"
@@ -15,7 +15,7 @@ set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true, :port => 6629 }
 set :keep_releases, 5
 default_run_options[:pty] = true
-server "XX.XX.XX.XX", :app, :web, :db, :primary => true
+server "178.62.247.248", :app, :web, :db, :primary => true
 
 after "deploy", "deploy:cleanup"
 

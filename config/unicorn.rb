@@ -1,4 +1,4 @@
-root = "/var/www/testapp/current"
+root = "/var/www/indiano/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
@@ -12,4 +12,4 @@ timeout 30
 # reference the capistrano "current" symlink
 before_exec do |_|
   ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
-endv
+end

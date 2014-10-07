@@ -18,6 +18,7 @@
 # Ignore database config
 /config/database.yml
 /config/deploy/
+/config/deploy.rb
 /shared/
 /public/system/
 .idea
