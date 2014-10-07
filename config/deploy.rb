@@ -7,8 +7,8 @@ set :repository,  "git@github.com:gushul/indiano.git"
 set :deploy_to, "/var/www/indiano"
 set :scm, :git
 set :branch, "master"
-set :user, "username"
-set :group, "username"
+set :user, "ueiek"
+set :group, "ueiek"
 set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy
