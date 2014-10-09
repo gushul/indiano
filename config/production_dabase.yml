@@ -1,8 +1,0 @@
-production:
-  adapter:  postgresql
-  host:     localhost
-  encoding: unicode
-  database: indiano_production
-  pool:     5
-  username: indiano
-  password: 664578
