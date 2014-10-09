@@ -17,7 +17,7 @@
 
 # Ignore database config
 /config/database.yml
-/config/production_databse.yml
+/config/production_database.yml
 /config/deploy/
 /config/deploy.rb
 /shared/
