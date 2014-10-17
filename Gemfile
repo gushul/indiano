@@ -26,8 +26,8 @@ gem 'simple_form'
 group :development do
   gem 'html2haml'
   gem 'rails_layout'
-  gem 'rvm-capistrano'
-  gem 'capistrano'
+  gem 'capistrano', '~> 3.2.1'
+  gem 'rvm1-capistrano3', require: false
 end
 
 group :production do
