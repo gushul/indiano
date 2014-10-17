@@ -2,7 +2,7 @@ require "rvm/capistrano"
 require "bundler/capistrano"
 load 'deploy/assets'
 
-set :application, "testapp"
+set :application, "indiano"
 set :shared_children, shared_children
 set :repository,  "git@github.com:gushul/indiano.git"
 set :deploy_to, "/var/www/indiano"
