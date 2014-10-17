@@ -1,6 +1,6 @@
 require "rvm/capistrano"
 require "bundler/capistrano"
-load "deploy:assets:precompile", "bundle:install"
+load "deploy/assets"
 
 set :application, "indiano"
 set :shared_children, shared_children
