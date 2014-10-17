@@ -55,12 +55,10 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.2.2)
-    capistrano (2.15.5)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
+    capistrano (3.2.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (~> 1.3)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -73,6 +71,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colorize (0.7.3)
     devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -105,7 +104,6 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     high_voltage (2.2.1)
-    highline (1.6.21)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -142,11 +140,7 @@ GEM
     multi_json (1.10.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-sftp (2.1.2)
-      net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    net-ssh-gateway (1.2.0)
-      net-ssh (>= 2.6.5)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.1.0)
@@ -187,8 +181,9 @@ GEM
     rmagick (2.13.2)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
-    rvm-capistrano (1.5.4)
-      capistrano (~> 2.15.4)
+    rvm1-capistrano3 (1.3.2.2)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -212,6 +207,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sshkit (1.5.1)
+      colorize
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -244,7 +243,7 @@ PLATFORMS
 DEPENDENCIES
   active_admin_multi_upload
   activeadmin!
-  capistrano
+  capistrano (~> 3.2.1)
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
@@ -261,7 +260,7 @@ DEPENDENCIES
   rails (= 4.1.4)
   rails_layout
   rmagick (= 2.13.2)
-  rvm-capistrano
+  rvm1-capistrano3
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form
