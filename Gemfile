@@ -27,11 +27,15 @@ group :development do
   gem 'html2haml'
   gem 'rails_layout'
   gem 'capistrano', '~> 3.2.1'
-  gem 'rvm1-capistrano3', require: false
+
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'puma'
 end
 #My
 gem 'carrierwave'
