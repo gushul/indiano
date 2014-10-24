@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #Default
-ruby '2.1.2'
+#ruby '2.1.2'
 gem 'rails', '4.1.4'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -32,6 +32,7 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+  gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
 group :production do
@@ -45,3 +46,4 @@ gem "active_admin_multi_upload"
 gem 'figaro', '~>1.0.0'
 gem 'foreman', '~> 0.75.0'
 gem 'will_paginate-bootstrap'
+gem ''
