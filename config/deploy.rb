@@ -3,7 +3,7 @@ lock '3.2.1'
 
 server '178.62.247.248', port: 6629, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:gushul/indiano.git'
+set :repo_url,        'git://github.com/gushul/indiano.git'
 set :application,     'indiano'
 set :user,            'ueiek'
 set :puma_threads,    [4, 16]
@@ -11,7 +11,7 @@ set :puma_workers,    0
 
 # Don't change these unless you know what you're doing
 set :pty,             true
-set :use_sudo,        false
+set :use_sudo,        true
 set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
@@ -20,10 +20,19 @@ set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub), auth_methods: %w(publickey) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, false  # Change to true if using ActiveRecord
+
+set :format, :pretty
+#set :log_level, :info
+
+set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
+
+role :app, %w{178.62.247.248}
+role :web, %w{178.62.247.248}
+role :db,  %w{178.62.247.248}
 
 ## Defaults:
 # set :scm,           :git
@@ -60,6 +69,8 @@ namespace :deploy do
     end
   end
 
+
+
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
@@ -68,10 +79,32 @@ namespace :deploy do
     end
   end
 
+  desc 'Symlink linked directories'
+  task :linked_dirs do
+    next unless any? :linked_dirs
+    on release_roles :all do
+      execute :mkdir, '-pv', linked_dir_parents(release_path)
+
+      fetch(:linked_dirs).each do |dir|
+        target = release_path.join(dir)
+        source = shared_path.join(dir)
+        unless test "[ -L #{target} ]"
+          if test "[ -d #{target} ]"
+            execute :rm, '-rf', target
+          end
+          execute :ln, '-s', source, target
+        end
+      end
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
+    end
+    on roles(:web) do
+      execute "touch #{release_path}/tmp/restart.txt"
     end
   end
 
