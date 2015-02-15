@@ -3,11 +3,7 @@ require 'capistrano/setup'
 
 # Includes default deployment tasks
 require 'capistrano/deploy'
-
-require 'capistrano/deploy'
-require 'capistrano/rvm'
-require 'capistrano/bundler'
-require 'capistrano/rails'
+require 'capistrano3/ubuntu-server-prepare'
 
 # Includes tasks from other gems included in your Gemfile
 #

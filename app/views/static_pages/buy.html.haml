@@ -1,3 +1,120 @@
+- @no_line = "home"
 .row
   %p 
-    для начала сотрудничества — пришлите нам на почту  письмо в котором укажите Ваши данные, регион. форму оплаты которая Вас устраивает, Т.К.  и данные грузополучателя. 
+    %h1.justify.buy  
+      Оптовикам
+    %h2.justify
+      Мы приглашаем к сотрудничеству интернет-магазины и бутики
+      модной одежды из разных регионов России и СНГ.
+    %h1.justify.buy
+      Весь товар находится на складе в Москве.
+  #leftMenu.accordion
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseOne"}
+          %i.icon-home
+            %span &nbsp;+&nbsp;
+            %span.onashead.p
+              Наши принципы работы
+      #collapseOne.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %ul
+            %li Мы несем ответственность за качество производимой продукции.
+            %li Мы уважаем партнеров, выполняем все договорные обязательства и заинтересованы во взаимовыгодном и долгосрочном сотрудничестве.
+            %li Мы уважаем потребителей и предоставляем только достоверную информацию о товаре и материалах
+            %li Мы заинтересованы в совершенствовании и развитии нашей компании и наших партнеров.
+            %li Мы предоставляем  нашим покупателям рекламную продукцию(каталоги и плакаты) - бесплатно.
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseTwo"}
+          %i.icon-th
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Условия сотрудничеств
+      #collapseTwo.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p
+            Мы работаем с :   
+          %ul
+            %li Юридическими лицами(ИП,ООО и др.).
+            %li Физическими лицами.
+            %li Организвторами совместных закупок.
+            
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseThree"}
+          %i.icon-th-list
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Правила заказа
+      #collapseThree.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p 
+            Минимальная сумма закупки — 20000 рублей.
+          %p 
+            Продажа моделей  производиться размерными рядами - одной модели, одного цвета.
+          %p  
+            Номер модели, цвета, размерный ряд смотрите в каталоге и прайс-листе.
+          %p  
+            Мы подтверждаем и формируем заказ в течение рабочего дня   после получения заявки и
+            выставляем счет на оплату.
+          %p   
+            Бронь действительная в течение 3 рабочих дней с момента
+            выставления счета. Отгрузка осуществляется только после 100% оплаты. В ином случае заказ
+            будет отменен
+          %p 
+            Вместе с заказом вам необходимо указать ФИО, город, телефон и выбрать ТК
+
+
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseFour"}
+          %i.icon-list-alt
+            %span &nbsp;+&nbsp;
+            %span.onashead.p
+              Резерв
+      #collapseFour.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p 
+            Для резервирования вашего заказа необходимо внести аванс в размере:
+          %p
+            20% на срок от 3 до 10 дней.
+          %p
+            30% на срок от 10 до 30 дней.
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseFive"}
+          %i.icon-cog
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Доставка
+      #collapseFive.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %p
+            Отправка товара осуществляется после 100% оплаты товара.
+          %p
+            Мы осуществляем бесплатную доставку  до ТК "Байкал-сервис".
+          %p
+            Доставка до других ТК уточняйте у менеджера.
+          %p
+            Услуги по доставке в свой город оплачивает покупатель.
+          %p 
+            Наша компания не несет ответсвенность за работу ТК.
+    .accordion-group
+      .accordion-heading.p
+        %a.accordion-toggle{"data-parent" => "#leftMenu", "data-toggle" => "collapse", :href => "#collapseSix"}
+          %i.icon-file
+            %span &nbsp;+&nbsp;
+            %span.onashead
+              Способы оплаты
+      #collapseSix.accordion-body.collapse{:style => "height: 0px; "}
+        .accordion-inner
+          %ul
+            %li 
+              %b 
+                Наличный расчет. 
+              Оплата производится  в нашем офисе-складе по адресу г. Москва, МКАД 19км внутренняя соторонаТК «Южные Ворота» линия з-9, павильон 58. Вместе с товаром передается накладная, сертификаты, договор и кассовый чек. 
+            %li
+              %b 
+                Оплата по безналичному расчету. 
+              Оплата по безналичному расчету осуществляется после выставления счета по указанным в нем реквизитам. Вместе с товаром передается накладная, сертификаты, договор.

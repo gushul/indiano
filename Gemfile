@@ -21,24 +21,25 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'fotoramajs'
-gem 'will_paginate-bootstrap'
+
 
 
 group :development do
   gem 'html2haml'
   gem 'rails_layout'
+  gem 'capistrano' 
+  gem 'capistrano3-ubuntu-server-prepare' 
+  gem 'capistrano-rvm'
 end
 
 group :production do
   gem 'unicorn'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
 end
 #My
 gem 'carrierwave'
+gem 'fog'
 gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 gem 'activeadmin', github: 'activeadmin'
 gem 'foreman'
 gem 'figaro'
+gem 'will_paginate-bootstrap'

@@ -4,4 +4,32 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   Mayor.create(name: 'Emanuel', city: cities.first)AU
+# User.create(name: 'ueiek',
+#   password: '664578',
+#   password_confirmation: '664578'
+# 
+Category.create(
+  title: 'Платья'
+)
+Category.create(
+  title: 'Блузы'
+)
+Category.create(
+  title: 'Туники'
+)
+Category.create(
+  title: 'Платья мини'
+)
+Category.create(
+  title: 'Юбки'
+)
+Category.create(
+  title: 'Сарафаны'
+)
+Category.create(
+  title: 'Брюки'
+)
+Category.create(
+  title: 'Трикотаж 2015'
+)

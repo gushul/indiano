@@ -76,3 +76,77 @@
 }
   
 
+
+#leftMenu .accordion-group {
+    margin-bottom: 0px;
+    border:0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}    
+
+#leftMenu .accordion-heading {
+    height: 34px;
+  
+    list-style-type:none;
+}  
+
+#leftMenu .accordion-heading  a{  
+    color: #000; /* text color */
+    
+    text-decoration:none;
+  
+}
+
+#leftMenu .accordion-heading  a:hover{  
+    color:#ccc     
+}
+
+#leftMenu .accordion-heading .active {
+    width: 182px;
+    height: 34px;
+    border: 1px solid #5b5b5b; /* inner stroke */
+    background-color: #353535; /* layer fill content */
+    background-image: -moz-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: -o-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: -webkit-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+}
+
+.onashead{
+  font-size: 26px;
+  font-family: "PF Adamant Pro Light"
+}
+.accordion-inner {
+  padding: 0 0 0 20px;
+}
+.p {
+  margin-top: 30px;
+  cursor: pointer;
+}
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.justify{
+  text-align: justify;
+}
+h1.buy{
+  font-size: 40px;
+  color: #00A3E6;
+  font-family: "PF Adamant Pro Light"
+}
+p.about{
+  font-size: 16px;
+  font-family: "PF Adamant Pro Light"
+}
+li.about{
+  margin: 0 0 9px 0;
+  font-size: 16px;
+  font-family: "PF Adamant Pro Light"
+}
+ul.about{
+  list-style: none;
+}

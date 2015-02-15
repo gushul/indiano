@@ -1,0 +1,15 @@
+= simple_form_for @product, html: { multipart: true } do |f|
+  = f.input :title, label: "Название"
+  %br
+  %p Описание
+  = f.text_area :description, rows: 6, label: "Описание"
+  %br
+  = f.collection_select(:category_id, Category.all, :id, :title, :include_blank => "Выберите категорию")
+  %br
+  = f.simple_fields_for :picture do |a|
+    .small-1.columns
+      = a.label :image, class: "left inline"
+      .small-11.columns
+        = a.file_field :image, multiple: true, name: "picture[image][]"
+  .actions
+    = f.button :submit
