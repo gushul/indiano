@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require fotorama
 //= require jquery_ujs
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+$(document).on("ready page:change", function() {
+  $('.fotorama').fotorama();
+});

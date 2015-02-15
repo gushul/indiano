@@ -6,17 +6,14 @@
 
   .col-xs-12.col-sm-12.col-md-8.col-lg-8
     #myCarousel.carousel.slide
-      %ol.carousel-indicators
-        - (0..@pictures.length - 1).to_a.each do |index|
-          %li{:class => index == 0 ? 'active':"", "data-slide-to" => index, "data-target" => "#myCarousel"}
-      .carousel-inner
-        - @pictures.each_with_index do |item_image, index|
-          %div{:class => index == 0 ? 'item active' : 'item'}
-            = image_tag item_image.image_url, class: "img-responsive"
-      %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
-        %span.icon-prev
-      %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
-        %span.icon-next
+    .fotorama{"data-nav" => "thumbs", "data-arrows" => "false"}
+      - if @pictures.empty?
+        %p
+          Empty
+      - else
+        - @pictures.each do |pic|
+          %a{src: pic.image_url}
+            = image_tag pic.image_url:thumb
     %hr/
 
   .col-xs-12.col-sm-12.col-md-4.col-lg-4

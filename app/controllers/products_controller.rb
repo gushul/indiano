@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
@@ -47,8 +47,11 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        params[:picture]['image'].each do |a|
-          @picture = @product.pictures.create!(image: a, product_id: @product.id)
+        if params[:picture] && params[:picture]['image']
+          @product.picture.delete_all
+          params[:picture]['image'].each do |a|
+            @picture = @product.pictures.create!(image: a, product_id: @product.id)
+          end
         end
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }

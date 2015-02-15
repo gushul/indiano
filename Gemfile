@@ -20,6 +20,8 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem 'fotoramajs'
+gem 'will_paginate-bootstrap'
 
 
 group :development do

@@ -3,6 +3,6 @@
     = link_to product do
       .col-xs-6.col-sm-6.col-md-4.col-lg-4
         .foto
-          = image_tag product.pictures.first.image_url(:thumb)
+          = image_tag product.pictures.first.image_url(:thumb) if product.pictures.first
         .caption
           %h3= product.title
