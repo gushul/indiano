@@ -41,7 +41,7 @@ end
 #My
 gem 'carrierwave'
 gem 'fog'
-gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem "mini_magick"
 gem 'activeadmin', github: 'activeadmin'
 gem 'foreman'
 gem 'figaro'
