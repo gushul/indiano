@@ -23,6 +23,7 @@ gem 'fotoramajs'
 gem 'html2haml'
 gem 'rails_layout'
 
+gem 'tail'
 
 group :development do
   gem 'capistrano'

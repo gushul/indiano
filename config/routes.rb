@@ -6,5 +6,6 @@ Indiano::Application.routes.draw do
   get "static_pages/about",   as: :about
   get "static_pages/contact", as: :contact
   get "static_pages/buy",     as: :how_to_buy
-  resources :products 
+  resources :products
+  mount Tail::Engine, at: "/tail"
 end
