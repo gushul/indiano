@@ -34,6 +34,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano3-ubuntu-server-prepare'
   gem 'capistrano3-delayed-job'
+  gem 'capistrano3-git-push'
 end
 
 group :production do
