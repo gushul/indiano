@@ -27,8 +27,8 @@ gem 'fotoramajs'
 group :development do
   gem 'html2haml'
   gem 'rails_layout'
-  gem 'capistrano' 
-  gem 'capistrano3-ubuntu-server-prepare' 
+  gem 'capistrano'
+  gem 'capistrano3-ubuntu-server-prepare'
   gem 'capistrano-rvm'
 end
 
