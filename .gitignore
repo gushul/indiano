@@ -19,7 +19,7 @@
 #/config/database.yml
 /config/deploy/
 /shared/
-/public/system/
+
 /public/uploads/
 Gemfile.lock
 .rvmrc
