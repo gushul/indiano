@@ -1,5 +1,6 @@
 Indiano::Application.routes.draw do
 
+  mount Tail::Engine, at: "/tail"
   resources :categories
 
   root "static_pages#home"
@@ -7,5 +8,4 @@ Indiano::Application.routes.draw do
   get "static_pages/contact", as: :contact
   get "static_pages/buy",     as: :how_to_buy
   resources :products
-  mount Tail::Engine, at: "/tail"
 end
