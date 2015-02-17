@@ -24,6 +24,7 @@ gem 'html2haml'
 gem 'rails_layout'
 
 gem 'tail'
+gem 'sprockets'
 
 group :development do
   gem 'capistrano'
@@ -38,12 +39,12 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'rails_12factor'
 end
 #My
 gem 'carrierwave'
 gem 'fog'
 gem "mini_magick"
-gem 'activeadmin', github: 'activeadmin'
 gem 'foreman'
 gem 'figaro'
 gem 'will_paginate-bootstrap'
