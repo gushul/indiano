@@ -3,19 +3,19 @@ development:
   encoding: unicode
   database: indiano_development
   pool: 5
-  username: ueiek
+  username: oleg
   password: 664578
 test:
   adapter: postgresql
   encoding: unicode
   database: indiano_test
   pool: 5
-  username: ueiek
+  username: oleg
   password: 664578
 production:
   adapter: postgresql
   encoding: unicode
   database: indiano_production
   pool: 5
-  username: deployer
-  password: 66457866
+  username: oleg
+  password: 664578
