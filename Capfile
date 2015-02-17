@@ -22,7 +22,6 @@ require 'capistrano/deploy'
 require 'capistrano3/ubuntu-server-prepare'
 require 'capistrano3/unicorn'
 require 'capistrano3/git-push'
-require 'capistrano/rvm'
 require 'capistrano/bundler'
 require 'capistrano/rails'# require 'capistrano/rails/migrations'
 
