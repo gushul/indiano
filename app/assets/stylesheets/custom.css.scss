@@ -52,6 +52,7 @@
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   width: 217px;
+  height: 360px;
   padding: 9px 0px 9px 0px;
 }
 .content {
@@ -70,11 +71,11 @@
 }
 .footer {
   background:#000000;
-  padding:8px 0; 
+  padding:8px 0;
   color:#fff;
   margin-bottom:0
 }
-  
+
 
 
 #leftMenu .accordion-group {
@@ -83,23 +84,23 @@
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
-}    
+}
 
 #leftMenu .accordion-heading {
     height: 34px;
-  
-    list-style-type:none;
-}  
 
-#leftMenu .accordion-heading  a{  
-    color: #000; /* text color */
-    
-    text-decoration:none;
-  
+    list-style-type:none;
 }
 
-#leftMenu .accordion-heading  a:hover{  
-    color:#ccc     
+#leftMenu .accordion-heading  a{
+    color: #000; /* text color */
+
+    text-decoration:none;
+
+}
+
+#leftMenu .accordion-heading  a:hover{
+    color:#ccc
 }
 
 #leftMenu .accordion-heading .active {
