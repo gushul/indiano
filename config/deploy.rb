@@ -8,6 +8,16 @@ namespace :deploy do
     before "deploy:migrate", :create_db
     invoke :deploy
   end
+  desc 'Runs rake db:seed'
+  task :seed => [:set_rails_env] do
+    on primary fetch(:migration_role) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "db:seed"
+        end
+      end
+    end
+  end
   task :create_db do
     on roles(:all) do
       within release_path do
@@ -18,7 +28,7 @@ namespace :deploy do
     end
   end
   task :restart do
-    invoke 'unicorn:legacy_restart'
+    invoke 'unicorn:restart'
   end
 end
 before :deploy, 'git:push'
