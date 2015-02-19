@@ -13,9 +13,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_dir
     "#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  def cache_dir
-   '/var/www/application/upload/'
- end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
