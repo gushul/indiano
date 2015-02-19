@@ -43,6 +43,7 @@ end
 #My
 gem 'carrierwave'
 gem 'fog'
+gem 'cloudinary'
 gem "mini_magick"
 gem 'foreman'
 gem 'figaro'
