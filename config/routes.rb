@@ -1,6 +1,5 @@
 Indiano::Application.routes.draw do
 
-  mount Tail::Engine, at: "/tail"
   resources :categories
 
   root "static_pages#home"
