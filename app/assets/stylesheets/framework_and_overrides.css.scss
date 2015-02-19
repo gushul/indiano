@@ -31,10 +31,10 @@ img {
 main {
   @extend .container;
   background-color: none;
-  background: url(bg.jpg);
+  background: image-url("bg.jpg");
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 100px; 
+  margin-top: 100px;
   min-height: 800px;
   // accommodate the navbar
   }

@@ -27,5 +27,7 @@ CarrierWave.configure do |config|
                   # To let CarrierWave work on heroku
 
   config.fog_directory    = 'indiano'
-  config.fog_public = true
+  #config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
+  #config.fog_public     = false                                  # optional, defaults to true
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
 end
