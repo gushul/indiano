@@ -7,4 +7,5 @@ Indiano::Application.routes.draw do
   get "static_pages/contact", as: :contact
   get "static_pages/buy",     as: :how_to_buy
   resources :products
+  resources :pictures
 end
