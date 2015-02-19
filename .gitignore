@@ -20,6 +20,7 @@
 /config/deploy/
 /shared/
 
-/public/uploads/
+/public/uploads/picture/image/*
+
 Gemfile.lock
 .rvmrc
