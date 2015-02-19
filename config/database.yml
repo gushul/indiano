@@ -17,5 +17,5 @@ production:
   encoding: unicode
   database: indiano_production
   pool: 5
-  username: deployer
-  password: 66457866
+  username: oleg
+  password: 664578
