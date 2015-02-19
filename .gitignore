@@ -17,9 +17,8 @@
 
 # Ignore database config
 #/config/database.yml
-/config/deploy/
-/shared/
 
+/shared/
 
 Gemfile.lock
 .rvmrc
