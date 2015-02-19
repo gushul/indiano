@@ -1,5 +1,4 @@
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('public')
   config.fog_credentials = {
     :provider              => 'AWS',
     :aws_access_key_id      => 'AKIAJ76CMC4BZSB2J7OQ',
