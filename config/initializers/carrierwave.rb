@@ -27,4 +27,5 @@ CarrierWave.configure do |config|
                   # To let CarrierWave work on heroku
 
   config.fog_directory    = 'indiano'
+  config.fog_public = true
 end
