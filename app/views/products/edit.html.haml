@@ -3,5 +3,8 @@
 = render 'form'
 
 = link_to 'Show', @product
+
 \|
 = link_to 'Back', products_path
+%br
+= link_to "delete", @product, method: :delete,  data: { confirm: "You sure?"  }
