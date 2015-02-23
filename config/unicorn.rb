@@ -1,6 +1,6 @@
 worker_processes 2
 
-working_directory "/var/www/apps/indiano/current" # available in 0.94.0+
+working_directory "/var/www/application/current" # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
