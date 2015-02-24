@@ -7,4 +7,8 @@ class Product < ActiveRecord::Base
   validates_associated :category
 
   scope :category_id, -> (category_id) { where category_id: category_id }
+
+  def self.search(search)
+    where('title LIKE ?', "%#{search}%")
+  end
 end

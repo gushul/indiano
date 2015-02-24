@@ -2,10 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:category_id].present?
-      @products = Product.category_id(params[:category_id]) 
+    @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
     else
-      @products = Product.all
+      @products = Product.category_id(params[:category_id]) if params[:category_id].present?
     end
   end
 

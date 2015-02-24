@@ -1,23 +1,26 @@
 - @dont_line = "store"
-.row
-  .col-md-3
-    = link_to "Платья", products_path(category_id: 1), class: "button btn btn-default btn-cons"
-  .col-md-3  
-    = link_to "Блузы", products_path(category_id: 2), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Туники", products_path(category_id: 3), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Платья мини", products_path(category_id: 4), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Юбки", products_path(category_id: 5), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Сарафаны", products_path(category_id: 6), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Брюки", products_path(category_id: 7), class: "button btn btn-default btn-cons"
-  .col-md-3
-    = link_to "Трикотаж 2015", products_path(category_id: 8), class: "button btn btn-default btn-cons"
-.row    
+.col-md-3
+  = link_to "Платья", products_path(category_id: 1), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Блузы", products_path(category_id: 2), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Туники", products_path(category_id: 3), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Платья мини", products_path(category_id: 4), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Юбки", products_path(category_id: 5), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Сарафаны", products_path(category_id: 6), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Брюки", products_path(category_id: 7), class: "button btn btn-default btn-cons"
+.col-md-3
+  = link_to "Трикотаж 2015", products_path(category_id: 8), class: "button btn btn-default btn-cons"
+.row#rowcenter
   .topline
+  %br
+  = form_tag products_path, method: 'get', class: "search"  do
+    = text_field_tag :search, params[:search], class: "input", placeholder: "Поиск по номеру модели"
+    = submit_tag "", :name => nil, class: "submit"
 .row
   - @products.each do |product|
     = link_to product do
