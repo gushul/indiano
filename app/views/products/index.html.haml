@@ -29,3 +29,5 @@
           = image_tag product.pictures.first.image_url(:thumb) if product.pictures.first
         .caption
           %h3= product.title
+          - if admin_signed_in?
+            = link_to 'Править', edit_product_path(product)

@@ -9,6 +9,14 @@
 #   password: '664578',
 #   password_confirmation: '664578'
 # 
+Admin.create(email: 'ueieko@gmail.com',
+             password: '664578',
+             password_confirmation: '664578'
+                      )
+Admin.create(email: 'rettif@yandex.ru',
+             password: '371366',
+             password_confirmation: '371366'
+                      )
 Category.create(
   title: 'Платья'
 )

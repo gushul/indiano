@@ -1,5 +1,6 @@
 Indiano::Application.routes.draw do
 
+  devise_for :admins
   resources :categories
 
   root "static_pages#home"
@@ -8,4 +9,7 @@ Indiano::Application.routes.draw do
   get "static_pages/buy",     as: :how_to_buy
   resources :products
   resources :pictures
+  devise_scope :admin do
+    get "/admin" => "devise/sessions#new"
+  end
 end

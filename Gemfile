@@ -44,6 +44,7 @@ group :production do
   gem 'unicorn'
 end
 #My
+gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 gem 'cloudinary'
