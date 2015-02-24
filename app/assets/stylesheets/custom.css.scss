@@ -75,15 +75,37 @@
   color:#fff;
   margin-bottom:0
 }
-
+span.block {
+  display:block;
+}
+.blockphone {
+border-left-color: white;
+border-left-style: double;
+border-left-width: thin;
+line-height: 27px;
+padding-left: 12px;
+}
+span.phone {
+  font-family: "PFAdamantProLight";
+  text-align: left;
+  font-size: 16px;
+  color: #2EB4D4;
+  padding: 0 0 0 15px
+}
+a.mail {
+  text-decoration: none !important;
+  color: #fff !important;
+  text-align: center;
+  padding: 0 0 0 15px
+}
 
 
 #leftMenu .accordion-group {
-    margin-bottom: 0px;
-    border:0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
+  margin-bottom: 0px;
+  border:0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
 
 #leftMenu .accordion-heading {
