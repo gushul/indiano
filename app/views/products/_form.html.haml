@@ -1,6 +1,12 @@
 = simple_form_for @product, html: { multipart: true } do |f|
   = f.input :title, label: "Название"
   %br
+  = f.input :size, label: "Размер"
+  %br
+  = f.input :long, label: "Длинна"
+  %br
+  = f.input :material, label: "Материал"
+  %br
   %p Описание
   = f.text_area :description, rows: 6, label: "Описание"
   %br
