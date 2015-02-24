@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
 
   scope :category_id, -> (category_id) { where category_id: category_id }
 
+  default_scope  { order(:title => :desc)  }
+
   def self.search(search)
     where('title LIKE ?', "%#{search}%")
   end
