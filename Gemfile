@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 #Added by rails_composser
-gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails'
 gem 'high_voltage'
