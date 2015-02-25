@@ -61,6 +61,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    ckeditor_rails (4.4.6)
+      railties (>= 3.0)
     cloudinary (1.0.82)
       aws_cf_signer
       rest-client
@@ -301,6 +303,7 @@ DEPENDENCIES
   capistrano3-ubuntu-server-prepare
   capistrano3-unicorn
   carrierwave
+  ckeditor_rails
   cloudinary
   coffee-rails (~> 4.0.0)
   devise

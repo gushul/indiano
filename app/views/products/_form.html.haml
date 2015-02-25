@@ -8,7 +8,7 @@
   = f.input :material, label: "Материал"
   %br
   %p Описание
-  = f.text_area :description, rows: 6, label: "Описание"
+  = f.text_area :description, :class => 'ckeditor', rows: 6, label: "Описание"
   %br
   = f.collection_select(:category_id, Category.all, :id, :title, :include_blank => "Выберите категорию")
   %br

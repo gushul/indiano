@@ -44,6 +44,7 @@ group :production do
 end
 #My
 gem 'devise'
+gem 'ckeditor_rails'
 gem 'carrierwave'
 gem 'fog'
 gem 'cloudinary'

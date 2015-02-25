@@ -13,9 +13,15 @@
 //= require jquery
 //= require fotorama
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
 $(document).on("ready page:change", function() {
   $('.fotorama').fotorama();
+});
+
+$('.ckeditor').ckeditor({
+  // optional config
+  // });
 });
