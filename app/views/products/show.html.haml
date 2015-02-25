@@ -1,6 +1,8 @@
 %p#notice= notice
 
 %p 
+  - if admin_signed_in?
+    = link_to 'Править', edit_product_path(@product)
 
 %p
 
@@ -30,5 +32,4 @@
       %b Материал
       = @product.material
     %br
-    %p
-      = @product.description
+    = raw @product.description
