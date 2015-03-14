@@ -1,6 +1,6 @@
 set :application, 'application'
 
-set :repo_url, "git@bitbucket.org:gushul/indiano.git"
+set :repo_url, "git@bitbucket.org:ueiek/indiano.git"
 set :unicorn_config_path, "#{current_path}/config/production/unicorn/unicorn.rb"
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system') # Строчка есть по умолчанию в deploy.rb, ее просто надо откомментировать
 namespace :deploy do
