@@ -1,6 +1,6 @@
 %p#notice= notice
 
-%p 
+%p
   - if admin_signed_in?
     = link_to 'Править', edit_product_path(@product)
 
@@ -33,3 +33,8 @@
       = @product.material
     %br
     = raw @product.description
+    %br
+    -# = simple_form_for(:shopping_cart, :url => {:controller => 'shopping_carts', :action => 'create'}) do |f|
+      = f.input  :product_id, value: @product
+      = f.input  :quantity
+      = f.button :submit

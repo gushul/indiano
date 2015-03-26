@@ -52,3 +52,4 @@ gem "mini_magick"
 gem 'foreman'
 gem 'figaro'
 gem 'will_paginate-bootstrap'
+gem 'acts_as_shopping_cart', '~> 0.2.1'
