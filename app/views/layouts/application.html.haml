@@ -10,10 +10,10 @@
     = csrf_meta_tags
   %body
     %header
-      = render 'layouts/navigation'
+      = render 'layouts/application/navigation'
     %main{:role => "main"}
 
-      = render 'layouts/messages'
+      = render 'layouts/application/messages'
       .topline
       .container.content
         - unless @dont_line
