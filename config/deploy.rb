@@ -29,9 +29,21 @@ namespace :deploy do
   end
   task :restart do
   end
+  task :update_code do
+  end
 end
 before :deploy, 'git:push'
 before 'deploy:setup', 'git:push'
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
 after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime 
+after "deploy:update_code", "sitemaps:create_symlink"
+
+
+namespace :sitemaps do
+  task :create_symlink, roles: :app do
+    run "mkdir -p #{shared_path}/sitemaps"
+    run "rm -rf #{release_path}/public/sitemaps"
+    run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
+  end
+end

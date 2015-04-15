@@ -7,4 +7,5 @@ Indiano::Application.routes.draw do
   devise_scope :admin do
     get "/admin" => "devise/sessions#new"
   end
+  get 'sitemap' => 'home#sitemap'
 end
