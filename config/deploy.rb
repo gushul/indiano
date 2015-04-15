@@ -2,7 +2,7 @@ set :application, 'application'
 
 set :repo_url, "git@bitbucket.org:ueiek/indiano.git"
 set :unicorn_config_path, "#{current_path}/config/production/unicorn/unicorn.rb"
-set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system') # Строчка есть по умолчанию в deploy.rb, ее просто надо откомментировать
+set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/sitemaps')
 namespace :deploy do
   task :setup do
     before "deploy:migrate", :create_db
@@ -32,18 +32,19 @@ namespace :deploy do
   task :update_code do
   end
 end
+
+namespace :sitemaps do
+  task :create_symlink do
+    on roles(:web) do
+      run "mkdir -p #{shared_path}/sitemaps"
+      run "rm -rf #{release_path}/public/sitemaps"
+      run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
+    end
+  end
+end
 before :deploy, 'git:push'
 before 'deploy:setup', 'git:push'
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
-after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime 
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime
 after "deploy:update_code", "sitemaps:create_symlink"
-
-
-namespace :sitemaps do
-  task :create_symlink, roles: :app do
-    run "mkdir -p #{shared_path}/sitemaps"
-    run "rm -rf #{release_path}/public/sitemaps"
-    run "ln -s #{shared_path}/sitemaps #{release_path}/public/sitemaps"
-  end
-end
