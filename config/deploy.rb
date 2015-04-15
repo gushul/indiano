@@ -29,14 +29,17 @@ namespace :deploy do
   end
   task :restart do
   end
-  task :update_code do
-  end
 end
 
 namespace :sitemaps do
-  task :create_symlink do
-    on roles(:web) do
-      run "ln -s #{shared_path}/public/sitemaps #{release_path}/public/sitemaps"
+  desc 'Generate sitemap'
+  task :generate do
+    on roles(:app) do
+      within release_path do
+        with rails_env: :production do
+          execute :rake, 'sitemap:generate'
+        end
+      end
     end
   end
 end
@@ -45,4 +48,4 @@ before 'deploy:setup', 'git:push'
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
 after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime
-after "deploy:update_code", "sitemaps:create_symlink"
+after "deploy", "sitemaps:generate
