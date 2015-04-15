@@ -48,4 +48,4 @@ before 'deploy:setup', 'git:push'
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
 after 'deploy:restart', 'unicorn:restart'   # app preloaded
 after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime
-after "deploy", "sitemaps:generate
+after "deploy", "sitemaps:generate"
