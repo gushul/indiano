@@ -9,4 +9,7 @@ Indiano::Application.routes.draw do
     get "/admin" => "devise/sessions#new"
   end
   get 'sitemap' => 'home#sitemap'
+
+  # Mast be last line
+  get "*any", via: :all, to: "errors#not_found"
 end
