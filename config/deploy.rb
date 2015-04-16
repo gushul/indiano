@@ -43,8 +43,6 @@ namespace :sitemaps do
     end
   end
 end
-before :deploy, 'git:push'
-before 'deploy:setup', 'git:push'
 after 'deploy', 'sitemaps:generate'
 after 'deploy', 'deploy:restart'
 after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded

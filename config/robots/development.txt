@@ -1,2 +1,8 @@
 User-Agent: *
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /admins/
+Disallow: /categories/
+Disallow: /products/new
+Disallow: /products/*/edit
+Sitemap: http://indiano-moscow.ru/sitemap.xml
