@@ -1,4 +1,5 @@
 Indiano::Application.routes.draw do
+  mount_roboto
   devise_for :admins
   resources :categories
   resources :products
