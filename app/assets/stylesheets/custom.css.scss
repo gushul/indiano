@@ -1,8 +1,19 @@
 .navbar-brand {
   padding: 10px 10px !important;
 }
-.navbar {
-  background-color: black !important;
+.navbar-nav {
+  li {
+    height: 100px;
+
+    a {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+      color: white !important;
+    }
+  }
+}
+.menu-margin-top {
+  margin-top: 30px;
 }
 .menu {
   margin-top: 30px;
@@ -18,6 +29,7 @@
     a {
       text-transform: uppercase;
       font-family: "PFAdamantProRegular";
+      color: #ffffff !important;
     }
   }
 }
@@ -80,6 +92,8 @@ border-left-style: double;
 border-left-width: thin;
 line-height: 27px;
 padding-left: 12px;
+margin: 30px;
+
 }
 span.phone {
   font-family: "PFAdamantProLight";

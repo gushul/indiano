@@ -1,11 +1,19 @@
 -# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
   .container
-    .navbar-header
+    .navbar-header.pull-left
       = link_to root_path do
-        =  image_tag "logo.png", class: 'navbar-brand'
+        =  image_tag "logo.png", class: 'navbar-brand', height: '100', width: '100'
+    .navbar-header.pull-right.menu-margin-top
+      %ul.nav.navbar-nav.pull-left
+        = render 'layouts/application/contact_info'
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.menu.navbar-right
         = render 'layouts/application/navigation_links'
-        = render 'layouts/application/contact_info'
+        -# = render 'layouts/application/contact_info'
       -# = render 'layouts/application/old_contact_info'

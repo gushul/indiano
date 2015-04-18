@@ -1,0 +1,19 @@
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path do
+        =  image_tag "logo.png", class: 'navbar-brand'
+    #navbar.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        = render 'layouts/application/navigation_links'
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "../navbar/"} Default
+        %li
+          %a{:href => "../navbar-static-top/"} Static top
+        = render 'layouts/application/contact_info'
