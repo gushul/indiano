@@ -4,3 +4,5 @@ $ ->
     height: 528
     pagination: false
     navigation: false
+    pause: true
+
