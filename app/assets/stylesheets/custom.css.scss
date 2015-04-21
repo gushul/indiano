@@ -7,16 +7,21 @@
 }
 .foto {
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  /* border-bottom: 1px solid #000; */
   width: 217px;
   height: 360px;
   padding: 9px 0px 9px 0px;
 }
+.caption h3 {
+  margin-top: 5px !important;
+  border-bottom: 1px solid #000;
+  width: 217px;
+}
 .content {
   padding: 50px 70px 50px 70px;
-  .row {
+  /* .row { */
     padding: 60px 70px 0px 70px;
-  }
+  /* } */
 }
 .medit {
   font-family: "PFAdamantProMediumItalic" !important;
