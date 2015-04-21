@@ -1,10 +1,11 @@
 %footer.footer
   .container
     .col-xs-6
-      %p
-        %small
-          Copyright © 2014 Company
-          %br/
-          All Rights Reserved.
+      = render 'layouts/application/navigation_links'
     .col-xs-6.text-right
+      %li
+        %a 7-916-152-42-45 Москва
+      %li
+        %a{href: "mailto:indianomoscow@gmail.com"}
+        indianomoscow@gmail.com
   = metrica_init
