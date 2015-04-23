@@ -204,6 +204,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags-helpers (0.2.0)
+      rails (> 3)
     mime-types (1.25.1)
     mini_magick (4.0.4)
     mini_portile (0.6.2)
@@ -334,6 +336,7 @@ DEPENDENCIES
   html2haml
   jbuilder (~> 2.0)
   jquery-rails
+  meta-tags-helpers (~> 0.2.0)
   mini_magick
   pg
   rails (= 4.1.4)
