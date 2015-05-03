@@ -5,4 +5,11 @@ class HomeController < ApplicationController
       format.html { redirect_to root_url  }
     end
   end
+  def catalog_pdf
+    send_file(
+      "#{Rails.root}/public/indiano_2015.pdf",
+      filename: "indiano_2015.pdf",
+      type: "application/pdf"
+    )
+  end
 end

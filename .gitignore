@@ -14,6 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.DC_Store
+*.DC_Store
 
 # Ignore database config
 #/config/database.yml
