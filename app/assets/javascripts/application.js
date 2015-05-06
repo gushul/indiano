@@ -15,7 +15,6 @@
 //= require fotorama
 //= require jquery_ujs
 //= require ckeditor-jquery
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
 $(document).on("ready page:change", function() {
