@@ -3,15 +3,14 @@ Indiano::Application.routes.draw do
   devise_for :admins
   resources :categories
   resources :products
-  get "/catalog_pdf" => 'home#catalog_pdf'
   resources :pictures
   resource :shopping_carts
   devise_scope :admin do
     get "/admin" => "devise/sessions#new"
   end
   get 'sitemap' => 'home#sitemap'
+  get "/catalog_pdf" => 'home#catalog_pdf'
 
-  # get "*id" => 'pages#show', eas: :page, format: false
   get "/static_pages/*id" => 'pages#show', as: :page, format: false
   root to: 'pages#show', id: 'home'
 
