@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         if params[:picture] && params[:picture]['image']
-          @product.picture.delete_all
+          @product.pictures.delete_all
           params[:picture]['image'].each do |a|
             @picture = @product.pictures.create!(image: a, product_id: @product.id)
           end

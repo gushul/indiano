@@ -36,6 +36,10 @@ group :development do
   gem 'capistrano3-ubuntu-server-prepare'
   gem 'capistrano3-delayed-job'
   gem 'capistrano3-git-push'
+  # debug
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "pry-rails"
 end
 
 group :production do
