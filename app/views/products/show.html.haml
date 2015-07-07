@@ -19,9 +19,17 @@
     %hr/
 
   .col-xs-12.col-sm-12.col-md-4.col-lg-4
-    %h2 
+    %h2
       %b Артикул
       = @product.title
+    - if @product.old_price? && @product.sale
+      %b Старая цена
+      %span.grey.through
+        = number_to_currency(@product.old_price, precision: 0)
+    %br
+    %b Цена
+    %span.red
+      = number_to_currency(@product.price, precision: 0)
     %br
       %b  Размер
       = @product.size

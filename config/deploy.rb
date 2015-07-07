@@ -3,7 +3,6 @@ set :application, 'application'
 set :repo_url, "git@bitbucket.org:ueiek/indiano.git"
 set :unicorn_config_path, "#{current_path}/config/production/unicorn/unicorn.rb"
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/sitemaps', 'public/uploads')
-set :shared_children, shared_children + %w{public/uploads}
 namespace :deploy do
   task :setup do
     before "deploy:migrate", :create_db

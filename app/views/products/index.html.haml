@@ -33,6 +33,16 @@
       .col-xs-6.col-sm-6.col-md-4.col-lg-4
         .foto
           = image_tag product.pictures.first.image_url(:thumb) if product.pictures.first
+          - if product.sale
+            .discount
+              Sale
+          - if product.price?
+            .price_container
+              - if product.old_price? && product.sale
+                %span.old-price
+                  = number_to_currency(product.old_price, precision: 0)
+              %span.price
+                = number_to_currency(product.price, precision: 0)
         .caption
           %h3= product.title
           - if admin_signed_in?

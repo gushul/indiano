@@ -7,6 +7,12 @@
   %br
   = f.input :material, label: "Материал"
   %br
+  = f.input :price, label: "Цена(  только цифры )"
+  %br
+  = f.input :old_price, label: "Старая цена(  только цифры )"
+  %br
+  = f.input :sale, label: "Товар учавствует в распродаже?", as: :radio_buttons
+  %br
   %p Описание
   = f.text_area :description, :class => 'ckeditor', rows: 6, label: "Описание"
   %br
