@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707130313) do
+ActiveRecord::Schema.define(version: 20150707193314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20150707130313) do
     t.string   "size"
     t.string   "long"
     t.string   "material"
-    t.integer  "old_price"
-    t.integer  "price"
+    t.float    "old_price"
+    t.float    "price"
     t.boolean  "sale"
   end
 
