@@ -40,9 +40,9 @@
             .price_container
               - if product.old_price? && product.sale
                 %span.old-price
-                  = number_to_currency(product.old_price, precision: 0)
+                  = number_to_currency(product.old_price)
               %span.price
-                = number_to_currency(product.price, precision: 0)
+                = number_to_currency(product.price)
         .caption
           %h3= product.title
           - if admin_signed_in?

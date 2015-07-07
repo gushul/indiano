@@ -25,11 +25,11 @@
     - if @product.old_price? && @product.sale
       %b Старая цена
       %span.grey.through
-        = number_to_currency(@product.old_price, precision: 0)
+        = number_to_currency(@product.old_price)
     %br
     %b Цена
     %span.red
-      = number_to_currency(@product.price, precision: 0)
+      = number_to_currency(@product.price)
     %br
       %b  Размер
       = @product.size
