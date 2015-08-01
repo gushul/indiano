@@ -24,6 +24,8 @@ gem 'fotoramajs'
 gem 'html2haml'
 gem 'rails_layout'
 
+gem 'activeadmin', '~> 1.0.0.pre1'
+
 gem 'sprockets'
 
 group :development do
