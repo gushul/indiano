@@ -18,6 +18,10 @@
   %br
   = f.collection_select(:category_id, Category.all, :id, :title, :include_blank => "Выберите категорию")
   %br
+  f.inputs "Attachment", :multipart => true do
+    f.input :cover_page, :as => :file, :hint => image_tag(f.object.cover_page.url(:thumb))
+    f.input :cover_page_cache, :as => :hidden 
+end
   = f.simple_fields_for :picture do |a|
     .small-1.columns
       = a.label :image, class: "left inline"
