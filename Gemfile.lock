@@ -15,6 +15,13 @@ GEM
       activesupport (= 4.1.4)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_admin-sortable_tree (0.2.1)
+      activeadmin (>= 0.6)
+      jquery-ui-rails (~> 5.0)
+      rails (>= 3.2)
+    active_admin_multi_upload (0.0.4)
+      jquery-fileupload-rails
+      rails (>= 4.0.0)
     activeadmin (1.0.0.pre1)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
@@ -233,6 +240,9 @@ GEM
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-fileupload-rails (0.4.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -364,6 +374,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin-sortable_tree
+  active_admin_multi_upload
   activeadmin (~> 1.0.0.pre1)
   acts_as_shopping_cart (~> 0.2.1)
   better_errors

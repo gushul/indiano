@@ -25,6 +25,8 @@ gem 'html2haml'
 gem 'rails_layout'
 
 gem 'activeadmin', '~> 1.0.0.pre1'
+gem "active_admin-sortable_tree"
+gem "active_admin_multi_upload"
 
 gem 'sprockets'
 

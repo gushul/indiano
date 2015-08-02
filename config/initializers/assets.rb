@@ -1,5 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
+Rails.application.config.assets.precompile += %w( progressbar.gif )
+Rails.application.config.assets.precompile += %w( loading.gif )
+Rails.application.config.assets.precompile += %w( active_admin_multi_upload/jquery_upload.css )
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
