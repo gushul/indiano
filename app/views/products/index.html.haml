@@ -23,10 +23,6 @@
     = text_field_tag :search, params[:search], class: "input", placeholder: "Поиск по номеру модели"
     = submit_tag "", :name => nil, class: "submit"
 
-  - if admin_signed_in?
-    %br
-    .col-md-2.col-md-offset-5
-      = link_to 'Новый продукт', new_product_path, class: "button btn btn-danger btn-cons"
 .row
   - @products.each do |product|
     = link_to product do
@@ -45,5 +41,3 @@
                 = number_to_currency(product.price)
         .caption
           %h3= product.title
-          - if admin_signed_in?
-            = link_to 'Править', edit_product_path(product)

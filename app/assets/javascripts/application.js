@@ -17,6 +17,7 @@
 //= require ckeditor-jquery
 //= require bootstrap-sprockets
 //= require_tree .
+//= stub active_admin
 $(document).on("ready page:change", function() {
   $('.fotorama').fotorama();
 });

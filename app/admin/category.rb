@@ -2,6 +2,13 @@ ActiveAdmin.register Category do
 
   permit_params :title, :position
 
+  sortable tree: false, # default
+           sorting_attribute: :position
+
+  index :as => :sortable do
+    label :title # item content
+    actions
+  end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
