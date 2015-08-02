@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
     @products = Product.ordered_by_category
     if params[:search]
       @products = Product.search(params[:search]).order("asc")
+    else
+      @products = Product.category_id(params[:category_id]) if params[:category_id].present?
     end
   end
 
