@@ -1,5 +1,6 @@
 ActiveAdmin.register Picture do
   allows_multi_upload(mounted_uploader: :image)
+  permit_params :image
 
 
   # See permitted parameters documentation:

@@ -3,6 +3,7 @@ ActiveAdmin.register Product do
   permit_params :title, :size, :long, :material,
                 :price, :old_price, :sale,
                 :description, :category_id,
+                picture_ids: [],
                 pictures_attributes: [:id, :product_id, :image]
 
   sortable tree: false, # default
@@ -48,9 +49,7 @@ ActiveAdmin.register Product do
     end
 
     f.inputs "Pictures" do
-      f.has_many :pictures, allow_destroy: true, new_record: true do |pi|
-        pi.input :image, :as => :file
-      end
+      render "active_admin_multi_upload/upload_form", resource: product, association: "pictures", attribute: "image" , options: {}
     end
     f.actions
   end
