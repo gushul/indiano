@@ -5,4 +5,5 @@ Disallow: /admins/
 Disallow: /categories/
 Disallow: /products/new
 Disallow: /products/*/edit
+Disallow: /admin/*
 Sitemap: http://indiano-moscow.ru/sitemap.xml
