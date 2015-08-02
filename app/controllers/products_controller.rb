@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin!, only: [:edit, :update, :desroy, :create]
 
   def index
-    @products = Product.ordered_by_category
+    @products = Product.all
     if params[:search]
       @products = Product.search(params[:search]).order("asc")
     else

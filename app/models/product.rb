@@ -11,6 +11,8 @@ class Product < ActiveRecord::Base
   scope :category_id, -> (category_id) { where category_id: category_id }
   scope :ordered_by_category, -> { joins(:category).order('categories.position ASC') }
 
+  default_scope  { order(:title => :desc)  }
+
 
   def self.search(search)
     where('title LIKE ?', "%#{search}%")
