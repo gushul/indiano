@@ -16,8 +16,9 @@
 //= require jquery_ujs
 //= require ckeditor-jquery
 //= require bootstrap-sprockets
-//= require_tree .
-//= stub active_admin
+//= require custom
+//= require jquery.etalage
+//= require _user_form
 $(document).on("ready page:change", function() {
   $('.fotorama').fotorama();
 });
