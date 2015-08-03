@@ -9,11 +9,6 @@ ActiveAdmin.register Product do
   sortable tree: false, # default
            sorting_attribute: :position
 
-  index :as => :sortable do
-    label :title # item content
-    actions
-  end
-
   index do
     column :title
     column :size
@@ -21,6 +16,10 @@ ActiveAdmin.register Product do
     column :sale
     column :price
     column :old_price
+    actions
+  end
+  index :as => :sortable do
+    label :title # item content
     actions
   end
   form(:html => { :multipart => true }) do |f|
