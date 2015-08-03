@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
   sortable tree: false, # default
            sorting_attribute: :position
 
-  index do
+  index default: true do
     column :title
     column :size
     column :category
@@ -53,7 +53,7 @@ ActiveAdmin.register Product do
     f.actions
   end
 
-  index as: :grid, default: true do |product|
+  index as: :grid do |product|
     link_to image_tag(product.pictures.first.try(:image_url)), admin_product_path(product)
   end
 end
